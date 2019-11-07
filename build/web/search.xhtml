@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./master.xhtml"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        <h:form>
+            <f:metadata>
+                <f:viewParam name="text" value="#{noteBean.text}" />
+                <f:viewParam name="action" value="#{noteBean.action}" />
+                <f:viewAction  action="#{noteBean.initSearch}"/>
+            </f:metadata>
+
+            <h2>Search Notes </h2>
+            Text :  
+            <h:inputText id="text"  value="#{noteBean.text}"/>
+            <p/>
+            <h:commandButton  actionListener="#{noteBean.search}" value="Search">
+                <f:ajax execute="text" render="output" />
+            </h:commandButton>
+
+            <p/>
+            <h:panelGroup id="output">
+                <ui:repeat  id="notes" 
+                            rendered="#{noteBean.notes.size() > 0}" 
+                            value="#{noteBean.notes}"  
+                            var="note">
+                     <div class="note">
+                        <div class="title"> ${note.title}</div>
+                        <pre>${note.text}</pre>
+                        <p/>
+                        [<a href="edit.xhtml?id=#{note.id}">Edit</a>]
+                        [<a  onclick="return confirm('Do you want to delete this note?')"
+                             href="delete.xhtml?id=#{note.id}&amp;action=search&amp;text=#{noteBean.text}">Delete</a>]
+                    </div>
+                    <p/>
+                </ui:repeat>
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

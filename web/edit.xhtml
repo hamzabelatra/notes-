@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="master.xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="content">
+        
+         <f:metadata>
+            <f:viewParam name="id" value="#{noteBean.id}" />
+            <f:viewAction  action="#{noteBean.load}" />
+        </f:metadata>
+
+        <h2>Edit Note</h2>
+             <h:form>
+         
+                Title
+                <br/>
+                <h:inputText  id="title"  value="#{noteBean.title}"  p:required="required"/>
+                <p/>     
+                Text 
+                <br/>
+                <h:inputTextarea  id="text" value="#{noteBean.text}" 
+                                   p:required="required" rows="5"   cols="80" /> 
+                <p/>
+                <h:inputHidden  id="id"  value="#{noteBean.id}"/>
+                
+                <h:commandButton  value="Update" actionListener="#{noteBean.update}" />
+                <p/>
+                <div class="info">
+                    <h:outputText value="#{noteBean.message}" />
+                </div>
+            </h:form>
+    </ui:define>
+
+</ui:composition>

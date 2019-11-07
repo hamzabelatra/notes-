@@ -1,0 +1,56 @@
+.title {
+    font-size:14pt;
+    font-weight :bold;
+}
+.redwhite {
+    background-color:red;
+    color:white;
+}
+.top {
+    color:white;
+    background-color:navy;
+    font-family: arial;
+    font-size:30pt;
+    letter-spacing: 5pt;
+    font-weight: bold;
+}
+.note{
+    background-color:#dddddd;
+}
+
+.center {
+    text-align: center;
+}
+.menu {
+    background-color:lightblue;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    font-size:12pt;
+    font-weight:bold;
+}
+.error {
+    color:red;
+    font-weight:  bold;
+}
+
+.info {
+    color:blue;
+    font-weight:  bold;
+}
+body {
+    background-color: #ffffff;
+    font-size: 12pt;
+    font-family: Verdana;
+    margin: 10px;
+}
+
+h2 {
+    font-family: Arial;
+    font-size:  18pt;
+    font-weight: bold;
+    color:red;
+}
+
+.user {
+    float:right;
+}

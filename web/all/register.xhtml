@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    template="./all.xhtml">
+
+    <ui:define name="content">
+        <script type="text/javascript">
+            function validate() {
+                var pwd1 = $("#password").val();
+                var pwd2 = $("#password2").val();
+                if (pwd1 != pwd2) {
+                    alert("Sorry! Passwords do not match!");
+                    $("#password2").focus();
+                    return false;
+                }
+                return true;
+            }
+            
+            function validateEmail() 
+            {
+                 $.get("/yournotes/rest/validateuser/" + $("#email").val(), {}, showResult);
+            }
+            
+            function showResult(data) 
+            {
+                if ( data.length > 0 ) {
+                      $("#emailmsg").html(data);
+                      $("#email").focus();
+                }
+                else
+                      $("#emailmsg").html("");
+            }
+                            
+        </script>
+
+        <h2>User Registration </h2>
+        <h:form prependId="false" onsubmit="return validate()">
+            Email Address <br/>
+            <h:inputText  id="email"  value="#{userBean.email}"  p:type="email"  p:required="required"
+                          p:onblur="validateEmail()" />
+            <span id="emailmsg"></span>
+            <p/>
+            Password <br/>
+            <h:inputSecret  id="password"  value="#{userBean.password}"   p:required="required" />
+            <p/>
+            Confirm Password <br/>
+            <h:inputSecret  id="password2"  value="#{userBean.password2}"   p:required="required" />
+            <p/>
+            <h:commandButton value="Submit" action="#{userBean.register}"  />
+            <p/>
+            <div class="error"><h:outputText  value="#{userBean.message}" /> </div>
+
+        </h:form>
+        <p/>
+        <a href="login.xhtml">Go Back To Login </a>
+
+    </ui:define>
+
+</ui:composition>

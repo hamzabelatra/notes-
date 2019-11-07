@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/classroom/may6/yournotes/web/add.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/filter/AuthFilter.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/all/register.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/web/all/all.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/dao/UserDAO.java</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/dao/NoteDAO.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/resources/css/default.css</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/entities/Note.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/list.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/beans/NoteBean.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/resources/jquery.js</file>
+            <file>file:/F:/classroom/may6/yournotes/web/changepassword.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/web/master.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/beans/Util.java</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/rest/ValidateUser.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/jquery.js</file>
+            <file>file:/F:/classroom/may6/yournotes/web/edit.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/src/java/beans/UserBean.java</file>
+            <file>file:/F:/classroom/may6/yournotes/web/search.xhtml</file>
+            <file>file:/F:/classroom/may6/yournotes/web/delete.xhtml</file>
+        </group>
+    </open-files>
+</project-private>
