@@ -1,2 +1,2 @@
 *.gs linguist-language=Java
-
+*.html linguist-vendored
